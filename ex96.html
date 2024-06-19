@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://i.ibb.co/GP3dyzw/IMG-6199.jpg">
+    <title>Frontend-кейс</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+           
+            
+
+            <!-- Меню сайта -->
+            <nav class="nav">
+                <ul>
+                    <li><a href="index1.html"> Программы без интерфейса</a></li>
+                    <li><a href="index2.html">Работа с элементом через ID</a></li>
+                    <li><a href="index3.html">Условный оператор JS</a></li>
+                    <li><a href="index4.html">Циклы JS</a></li>
+                    <li><a href="index5.html">Массивы JS</a></li>
+                    <li><a href="index6.html">Работа с CSS стилями</a></li>
+                    <li><a href="index7.html">Работа с ползунками</a></li>
+                    <li><a href="index8.html">Сборник комплексных задач</a></li>
+                    <li><a href="index9.html">Задачи студентов</a></li>
+                    <li><a href="index10.html">Чтение файлов и работа с текстом</a></li>
+                    <li><a href="index11.html">Socket.io – Запрос/Ответ</a></li>
+                    <li><a href="index12.html">Программы С#</a></li>
+                    
+                </ul>
+            </nav>
+
+            <!-- Иконка бургерменю -->
+            <div class="burger">
+                <span></span>
+            </div>
+            <button class="resh"><a href="resh9.html">Показать решение</a></button>
+        </header>
+        <table>
+            
+            <tbody>
+                <tr><td> <b>
+                    Задача 1. Напишите серверное приложение, состоящее из файлов server.js и 
+                    index.html. HTML файл содержит кнопку «отправить запрос на сервер 1». По нажатию на 
+                    кнопку, на сервер отправляется запрос «my1Response», результатом которого будет вывод в 
+                    терминал текста «запрос 1 принят».
+                </b></td>
+            </tr>
+                
+        
+            </tbody>
+       </table>
+        <div class="code" id="editor"></div>
+        <div>
+            <button id="runCode">Выполнить</button>
+        </div>
+        <div class="aboba">
+            <p><b>Ошибки:</b></p>
+            <pre id="result"></pre>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.5/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.5/ext-language_tools.js"></script>
+    <script>
+        var editor = ace.edit("editor");
+        editor.setTheme("ace/theme/twilight");
+        editor.session.setMode("ace/mode/python");
+
+        // Включение автозаполнения и подсказок
+        ace.require("ace/ext/language_tools");
+        editor.setOptions({
+            enableBasicAutocompletion: true,
+            enableSnippets: true,
+            enableLiveAutocompletion: true
+        });
+
+        document.getElementById('runCode').addEventListener('click', function() {
+            var userCode = editor.getValue();
+            var resultElement = document.getElementById('result');
+            try {
+                var userFunction = new Function(userCode);
+                var result = userFunction();
+                if (result === undefined) {
+                    resultElement.textContent = 'Ошибок нет';
+                } else {
+                    resultElement.textContent = result;
+                }
+            } catch (error) {
+                resultElement.textContent = 'Ошибка: ' + error.message;
+            }
+        });
+
+        document.querySelector('.burger').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('.nav').classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

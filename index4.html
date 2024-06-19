@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://i.ibb.co/GP3dyzw/IMG-6199.jpg">
+    <title>Frontend-кейс</title>
+    <link rel="stylesheet" href="./style1.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <!-- Меню сайта -->
+            <nav class="nav">
+                <ul>
+                    <li><a href="index1.html" onclick="saveTheme('Программы без интерфейса')"> Программы без интерфейса</a></li>
+                    <li><a href="index2.html" onclick="saveTheme('Работа с элементом через ID')">Работа с элементом через ID</a></li>
+                    <li><a href="index3.html" onclick="saveTheme('Условный оператор JS')">Условный оператор JS</a></li>
+                    <li><a href="index4.html" onclick="saveTheme('Циклы JS')">Циклы JS</a></li>
+                    <li><a href="index5.html" onclick="saveTheme('Массивы JS')">Массивы JS</a></li>
+                    <li><a href="index6.html" onclick="saveTheme('Работа с CSS стилями')">Работа с CSS стилями</a></li>
+                    <li><a href="index7.html" onclick="saveTheme('Работа с ползунками')">Работа с ползунками</a></li>
+                    <li><a href="index8.html" onclick="saveTheme('Сборник комплексных задач')">Сборник комплексных задач</a></li>
+                    <li><a href="index9.html" onclick="saveTheme('Задачи студентов')">Задачи студентов</a></li>
+                    <li><a href="index10.html" onclick="saveTheme('Чтение файлов и работа с текстом')">Чтение файлов и работа с текстом</a></li>
+                    <li><a href="index11.html" onclick="saveTheme('Socket.io – Запрос/Ответ')">Socket.io – Запрос/Ответ</a></li>
+                    <li><a href="index12.html" onclick="saveTheme('Программы С#')">Программы С#</a></li>
+                </ul>
+            </nav>
+
+            <!-- Иконка бургерменю -->
+            <div class="burger">
+                <span></span>
+            </div>
+            <a href="main.html"><img src="newlogozifra.png" alt=""></a>
+        </header>
+        
+        <div class="main-page">
+            <div class="main-cont5">
+                <h1 id="selectedTheme"></h1>
+                <div class="ex-cont">
+                    <div class="ex">
+                        <div class="ex-item"><a class="font2" href="ex40.html">Задача 1.</a></div>
+                        <div class="ex-item"><a class="font2" href="ex41.html">Задача 2.</a></div>
+                        <div class="ex-item"><a class="font2" href="ex42.html">Задача 3.</a></div>
+                        <div class="ex-item"><a class="font2" href="ex43.html">Задача 4.</a></div>
+                        <div class="ex-item"><a class="font2" href="ex44.html">Задача 5.</a></div>
+                        <div class="ex-item"><a class="font2" href="ex45.html">Задача 6.</a></div>
+                        <div class="ex-item"><a class="font2" href="ex46.html">Задача 7.</a></div>
+                        <div class="ex-item"><a class="font2" href="ex47.html">Задача 8.</a></div>
+                        <div class="ex-item"><a class="font2" href="ex48.html">Задача 9.</a></div>
+                        <div class="ex-item"><a class="font2" href="ex49.html">Задача 10.</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <script>
+        document.querySelector('.burger').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('.nav').classList.toggle('open');
+        });
+
+        // Получаем сохраненную тему и отображаем её
+        document.addEventListener('DOMContentLoaded', function() {
+            const selectedTheme = localStorage.getItem('selectedTheme');
+            if (selectedTheme) {
+                document.getElementById('selectedTheme').textContent = selectedTheme;
+            }
+        });
+
+        function saveTheme(theme) {
+            localStorage.setItem('selectedTheme', theme);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://i.ibb.co/GP3dyzw/IMG-6199.jpg">
+    <title>Frontend-кейс</title>
+    <link rel="stylesheet" href="./style1.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+           
+            
+
+            <!-- Меню сайта -->
+            <nav class="nav">
+                <ul>
+                    <li><a href="index1.html"> Программы без интерфейса</a></li>
+                    <li><a href="index2.html">Работа с элементом через ID</a></li>
+                    <li><a href="index3.html">Условный оператор JS</a></li>
+                    <li><a href="index4.html">Циклы JS</a></li>
+                    <li><a href="index5.html">Массивы JS</a></li>
+                    <li><a href="index6.html">Работа с CSS стилями</a></li>
+                    <li><a href="index7.html">Работа с ползунками</a></li>
+                    <li><a href="index8.html">Сборник комплексных задач</a></li>
+                    <li><a href="index9.html">Задачи студентов</a></li>
+                    <li><a href="index10.html">Чтение файлов и работа с текстом</a></li>
+                    <li><a href="index11.html">Socket.io – Запрос/Ответ</a></li>
+                    <li><a href="index12.html">Программы С#</a></li>
+                    
+                </ul>
+            </nav>
+
+            <!-- Иконка бургерменю -->
+            <div class="burger">
+                <span></span>
+            </div>
+            <a href="main.html"><img src="newlogozifra.png" alt=""></a>
+        </header>
+        
+        <div class="main-page">
+            <div class="main-cont">
+                <div class="font26">
+                
+                В HTML-разметке создается поле ввода числа с уникальным идентификатором numberInput и кнопка с атрибутом onclick, который вызывает функцию checkEvenOdd() при нажатии.
+                    <p>В JavaScript-коде функция checkEvenOdd() получает значение введенного числа из поля ввода, преобразует его в целое число и проверяет его на четность.</p>
+                    В зависимости от результата проверки, программа выводит соответствующее сообщение о четности или нечетности числа.
+
+                    <code>
+
+                    <b><.label for="numberInput">Введите число:</label.>
+                    <p><.input type="number" id="numberInput"></p>
+                    <.button onclick="checkEvenOdd()">Проверить</button.>
+                    <p><.p>id="result"<.p>></p></b>
+
+                <b><p></b> 
+                    <b>function checkEvenOdd() {
+    // Получаем значение введенного числа из поля ввода
+    <p>var number = parseInt(document.getElementById("numberInput").value);</p>
+
+    // Проверяем четность числа
+    <p>if (number % 2 === 0) {</p>
+        document.getElementById("result").innerText = "Число " + number + " четное.";
+    <p>} else {</p>
+        document.getElementById("result").innerText = "Число " + number + " нечетное.";
+    }
+}
+</code>
+                </b>
+            </div>
+        </div>
+    </div>
+        
+    </div>
+   
+    <button id="backButton" class="back-button">Назад</button>
+    </div>
+
+    <script>
+        document.querySelector('.burger').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('.nav').classList.toggle('open');
+        });
+
+        document.getElementById('backButton').addEventListener('click', function() {
+            window.history.back();
+        });
+    </script>
+</body>
+</html>
